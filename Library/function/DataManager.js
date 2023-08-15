@@ -229,7 +229,7 @@ function DungeonRecord(UserSessionRecord, UserIndexRecord, DungeonKey, PlayData)
 				UserIndexRecord['chara_list'][CharacterIndex]['exp'] = NewData[1];
 				FullGrowthTable.push(UserIndexRecord['chara_list'][CharacterIndex]);
 			} else { GrowthTable.push({'chara_id': CharacterData['chara_id'], 'take_exp': 0}); }
-			if (EventMap.EventFriendList[String(CharacterData['chara_id'])] != undefined) {
+			/*if (EventMap.EventFriendList[String(CharacterData['chara_id'])] != undefined) {
 				const FriendEventID = EventMap.EventFriendList[String(CharacterData['chara_id'])]['event_id'];
 				if ((UserSessionRecord['Event']['Raid'][String(FriendEventID)] != undefined) &&
 					(UserSessionRecord['Event']['Raid'][String(FriendEventID)]['Friendship'][0] != undefined) &&
@@ -250,7 +250,7 @@ function DungeonRecord(UserSessionRecord, UserIndexRecord, DungeonKey, PlayData)
 					}
 					FriendshipTable.push(FriendTemplate);
 				}
-			}
+			}*/
 		}
 	}
 	const DropTable = UserSessionRecord['DungeonRecord']['DropTable'];
@@ -331,7 +331,7 @@ function DungeonRecord(UserSessionRecord, UserIndexRecord, DungeonKey, PlayData)
 			'entity_result': EntityList
 		}
 	}
-	if (IsMulti == true) { delete JSONDict['data']['repeat_data']; }
+	//if (IsMulti == true) { delete JSONDict['data']['repeat_data']; }
 	const PlayerLevel = LevelMap.Player(UserIndexRecord['user_data']['exp'] + PlayerEXP);
 	const CurrentLevel = UserIndexRecord['user_data']['level'];
 	UserIndexRecord['user_data']['level'] = PlayerLevel[0];
@@ -421,7 +421,7 @@ function DungeonSkipRecord(UserSessionRecord, UserIndexRecord, DungeonKey, PlayC
 				UserIndexRecord['chara_list'][CharacterIndex]['exp'] = NewData[1];
 				FullGrowthTable.push(UserIndexRecord['chara_list'][CharacterIndex]);
 			} else { GrowthTable.push({'chara_id': CharacterData['chara_id'], 'take_exp': 0}); }
-			if (EventMap.EventFriendList[String(CharacterData['chara_id'])] != undefined) {
+			/*if (EventMap.EventFriendList[String(CharacterData['chara_id'])] != undefined) {
 				const FriendEventID =  EventMap.EventFriendList[String(CharacterData['chara_id'])]['event_id'];
 				if ((UserSessionRecord['Event']['Raid'][String(FriendEventID)] != undefined) &&
 					(UserSessionRecord['Event']['Raid'][String(FriendEventID)]['Friendship'][0] != undefined) &&
@@ -442,7 +442,7 @@ function DungeonSkipRecord(UserSessionRecord, UserIndexRecord, DungeonKey, PlayC
 					}
 					FriendshipTable.push(FriendTemplate);
 				}
-			}
+			}*/
 		}
 	}
 	const DropTable = QuestMap.GetQuestDropsSkip(String(UserSessionRecord['DungeonRecord']['LastQuestID']), PlayCount);
@@ -1469,10 +1469,10 @@ function PopulateUnitData(PartyNo_List, ViewerID, UserIndexRecord, UserSessionRe
 			if (Crest_Slot_Type_Two[0] == undefined) { Crest_Slot_Type_Two[0] = {}; } if (Crest_Slot_Type_Two[1] == undefined) { Crest_Slot_Type_Two[1] = {}; }
 			if (Crest_Slot_Type_Thr[0] == undefined) { Crest_Slot_Type_Thr[0] = {}; } if (Crest_Slot_Type_Thr[1] == undefined) { Crest_Slot_Type_Thr[1] = {}; }
 
-			if (String(QuestID).slice(0,3) == "204" && EventMap.EventInfoMap[String(QuestID).slice(0,5)]['event_character'] == Character_ID) { 
+			/*if (String(QuestID).slice(0,3) == "204" && EventMap.EventInfoMap[String(QuestID).slice(0,5)]['event_character'] == Character_ID) { 
 				CharacterData['attack'] = CharacterData['attack'] + Math.floor(CharacterData['attack'] * 1.30);
 				CharacterData['defence'] = 30;
-			}
+			}*/
 
 			let FinalCharaData = {
 				'position': CompletedCharacters + 1,
